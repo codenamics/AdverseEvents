@@ -32,6 +32,7 @@ app.post('/send', (req, res) => {
         <li>Lastname: <h3>${req.body.lastname}</h3></li>
         <li>Location: <h3>${req.body.location}</h3></li>
         <li>Phone: <h3>${req.body.phone}</h3></li>
+        <li>Phone: <h3>${req.body.email}</h3></li>
         <li>Date: <h3>${req.body.date}</h3></li>
         <li>Drug: <h3>${req.body.drug}</h3> </li>
         <li>Batch number: <h3>${req.body.batch}</h3></li>

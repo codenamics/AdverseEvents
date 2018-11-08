@@ -8,6 +8,7 @@ const validatedInput = (data) => {
     data.lastname = !isEmpty(data.lastname) ? data.lastname : '';
     data.location = !isEmpty(data.location) ? data.location : '';
     data.phone = !isEmpty(data.phone) ? data.phone : '';
+    data.email = !isEmpty(data.email) ? data.email : '';
     data.date = !isEmpty(data.date) ? data.date : '';
     data.drug = !isEmpty(data.drug) ? data.drug : '';
     data.batch = !isEmpty(data.batch) ? data.batch : '';
@@ -46,6 +47,9 @@ const validatedInput = (data) => {
 
     if (Validator.isEmpty(data.phone)) {
         errors.phone = 'Phone field is required';
+    }
+    if (!Validator.isEmail(data.email)) {
+        errors.email = 'Email is badly formatted';
     }
 
     if (Validator.isEmpty(data.date)) {
