@@ -16,7 +16,8 @@ export class UserForm extends Component {
     drug: "",
     batch: "",
     outcome: "",
-    details: ""
+    details: "",
+    errors: {}
   };
   submitData = () => {
     const adverseData = {
@@ -34,8 +35,7 @@ export class UserForm extends Component {
     axios
       .post("http://localhost:5000/send", adverseData)
       .then(res => console.log(res))
-      .then(this.nextStep())
-      .catch(errors => console.log(errors));
+      .catch(err => this.setState({ errors: err.response.data }));
   };
   nextStep = () => {
     const { step } = this.state;
@@ -67,7 +67,8 @@ export class UserForm extends Component {
       drug,
       batch,
       outcome,
-      details
+      details,
+      errors
     } = this.state;
     const values = {
       step,
@@ -107,6 +108,7 @@ export class UserForm extends Component {
             nextStep={this.nextStep}
             previousStep={this.previousStep}
             values={values}
+            errors={errors}
           />
         );
       case 4:

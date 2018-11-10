@@ -27,15 +27,19 @@ export class FormPersonalDetails extends Component {
         batch,
         outcome,
         details
-      }
+      },
+      errors
     } = this.props;
+    console.log(errors);
     return (
       <MuiThemeProvider>
         <React.Fragment>
           <AppBar title="Confirm Data" />
           <List>
             <ListItem primaryText="Name" secondaryText={name} />{" "}
+            <h1>{errors.name}</h1>
             <ListItem primaryText="Last name" secondaryText={lastname} />{" "}
+            <h1>{errors.lastname}</h1>
             <ListItem primaryText="Email" secondaryText={email} />{" "}
             <ListItem primaryText="Location" secondaryText={location} />{" "}
             <ListItem primaryText="Phone" secondaryText={phone} />{" "}
