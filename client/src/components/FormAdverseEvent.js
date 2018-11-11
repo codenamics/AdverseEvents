@@ -19,18 +19,18 @@ export class FormAdverseEvent extends Component {
     return (
       <div class="container">
         <div className="row x-center ">
-          <div class="col s6 m-lr-auto">
+          <div class="col l6 s12 m-lr-auto">
             <div class="input-field">
               <input
                 required
                 id="date"
-                type="text"
+                type="date"
                 placeholder="Date"
                 class="validate"
                 onChange={handleChange("date")}
                 defaultValue={values.date}
-              />
-            </div>
+              />{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -40,9 +40,8 @@ export class FormAdverseEvent extends Component {
                 onChange={handleChange("drug")}
                 defaultValue={values.drug}
               />
-
-              <label for="drug">Drug</label>
-            </div>
+              <label for="drug"> Drug </label>{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -51,9 +50,9 @@ export class FormAdverseEvent extends Component {
                 class="validate"
                 onChange={handleChange("batch")}
                 defaultValue={values.batch}
-              />
-              <label for="batch">Batch</label>
-            </div>
+              />{" "}
+              <label for="batch"> Batch </label>{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -62,9 +61,9 @@ export class FormAdverseEvent extends Component {
                 class="validate"
                 onChange={handleChange("outcome")}
                 defaultValue={values.outcome}
-              />
-              <label for="outcome">Outcome</label>
-            </div>
+              />{" "}
+              <label for="outcome"> Outcome </label>{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -73,12 +72,12 @@ export class FormAdverseEvent extends Component {
                 class="validate"
                 onChange={handleChange("details")}
                 defaultValue={values.details}
-              />
-              <label for="details">Details</label>
-            </div>
+              />{" "}
+              <label for="details"> Details </label>{" "}
+            </div>{" "}
             <a class="waves-effect waves-light btn" onClick={this.back}>
-              Back
-            </a>
+              Back{" "}
+            </a>{" "}
             {values.date === "" ||
             values.drug === "" ||
             values.batch === "" ||
@@ -89,15 +88,15 @@ export class FormAdverseEvent extends Component {
                 class="waves-effect waves-light btn"
                 onClick={this.continue}
               >
-                Continue
+                Continue{" "}
               </a>
             ) : (
               <a class="waves-effect waves-light btn" onClick={this.continue}>
-                Continue
+                Continue{" "}
               </a>
-            )}
-          </div>
-        </div>
+            )}{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
 import "materialize-css/dist/css/materialize.min.css";
-
+import M from "materialize-css/dist/js/materialize.min.js";
 export class FormPersonalDetails extends Component {
   continue = e => {
     e.preventDefault();
@@ -14,7 +13,7 @@ export class FormPersonalDetails extends Component {
     return (
       <div class="container">
         <div className="row x-center ">
-          <div class="col s6 m-lr-auto">
+          <div class="col l6 s12 m-lr-auto">
             <div class="input-field">
               <input
                 required
@@ -24,8 +23,8 @@ export class FormPersonalDetails extends Component {
                 class="validate"
                 onChange={handleChange("name")}
                 defaultValue={values.name}
-              />
-            </div>
+              />{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -35,8 +34,8 @@ export class FormPersonalDetails extends Component {
                 class="validate"
                 onChange={handleChange("lastname")}
                 defaultValue={values.lastname}
-              />
-            </div>
+              />{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -46,8 +45,8 @@ export class FormPersonalDetails extends Component {
                 class="validate"
                 onChange={handleChange("location")}
                 defaultValue={values.location}
-              />
-            </div>
+              />{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -57,8 +56,8 @@ export class FormPersonalDetails extends Component {
                 class="validate"
                 onChange={handleChange("phone")}
                 defaultValue={values.phone}
-              />
-            </div>
+              />{" "}
+            </div>{" "}
             <div className="input-field">
               <input
                 required
@@ -68,8 +67,8 @@ export class FormPersonalDetails extends Component {
                 class="validate"
                 onChange={handleChange("email")}
                 defaultValue={values.email}
-              />
-            </div>
+              />{" "}
+            </div>{" "}
             {values.name === "" ||
             values.lastname === "" ||
             values.email === "" ||
@@ -80,15 +79,15 @@ export class FormPersonalDetails extends Component {
                 class="waves-effect waves-light btn"
                 onClick={this.continue}
               >
-                Continue
+                Continue{" "}
               </a>
             ) : (
               <a class="waves-effect waves-light btn" onClick={this.continue}>
-                Continue
+                Continue{" "}
               </a>
-            )}
-          </div>
-        </div>
+            )}{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }

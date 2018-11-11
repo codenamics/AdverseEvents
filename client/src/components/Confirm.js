@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import { List, ListItem } from "material-ui/List";
-import RaisedButton from "material-ui/RaisedButton";
 
 export class FormPersonalDetails extends Component {
   continue = e => {
@@ -34,24 +30,62 @@ export class FormPersonalDetails extends Component {
     return (
       <div class="container">
         <div className="row x-center ">
-          <div class="col s6 m-lr-auto">
+          <div class="col l6 s12 m-lr-auto">
             <ul class="collection">
-              <li class="collection-item">Name:{name}</li>
-              <li class="collection-item">{lastname}</li>
-              <li class="collection-item">{email}</li>
-              <li class="collection-item">{phone}</li>
-              <li class="collection-item">{location}</li>
-              <li class="collection-item">{date}</li>
-              <li class="collection-item">{drug}</li>
-              <li class="collection-item">{batch}</li>
-              <li class="collection-item">{outcome}</li>
-              <li class="collection-item">{details}</li>
-            </ul>
-            <a class="waves-effect waves-light btn" onClick={this.continue}>
-              Continue
-            </a>
-          </div>
-        </div>
+              <li class="collection-item flex justify-sb">
+                {" "}
+                <div>Name:</div> <div>{name}</div>{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Last Name:</div> {lastname}{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Email:</div>
+                <div>{email}</div>{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Phone:</div>
+                <div>{phone}</div>{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Location</div>
+                <div>{location}</div>{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Date:</div> <div>{date} </div>
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Drug:</div> <div>{drug}</div>{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Batch:</div>
+                <div>{batch}</div>{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Outcome:</div>
+                <div>{outcome}</div>{" "}
+              </li>{" "}
+              <li class="collection-item flex justify-sb">
+                <div>Detials:</div>
+                <div>{details}</div>{" "}
+              </li>{" "}
+            </ul>{" "}
+            <button
+              href="#"
+              class="waves-effect waves-light btn"
+              onClick={this.back}
+            >
+              Back" "}
+            </button>
+            <button
+              href="#"
+              class="waves-effect waves-light btn"
+              onClick={this.continue}
+            >
+              Continue{" "}
+            </button>{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }
