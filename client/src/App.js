@@ -7,6 +7,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <nav>
+          <div class="nav-wrapper" />{" "}
+        </nav>{" "}
         <UserForm />
       </div>
     );

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
+import M from "materialize-css/dist/js/materialize.min.js";
+import "materialize-css/dist/css/materialize.min.css";
 
 export class FormAdverseEvent extends Component {
   continue = e => {
@@ -16,48 +14,91 @@ export class FormAdverseEvent extends Component {
 
   render() {
     const { values, handleChange } = this.props;
+
+    console.log(values);
     return (
-      <MuiThemeProvider>
-        <React.Fragment>
-          <AppBar title="Adverse Event Reporter" />
-          <TextField
-            hintText="Date"
-            floatingLabelText="Date"
-            onChange={handleChange("date")}
-            defaultValue={values.date}
-          />{" "}
-          <TextField
-            hintText="Drug name"
-            floatingLabelText="Drug name"
-            onChange={handleChange("drug")}
-            defaultValue={values.drug}
-          />{" "}
-          <TextField
-            hintText="Batch number"
-            floatingLabelText="Batch number"
-            onChange={handleChange("batch")}
-            defaultValue={values.batch}
-          />{" "}
-          <TextField
-            hintText="Outcome"
-            floatingLabelText="Outcome"
-            onChange={handleChange("outcome")}
-            defaultValue={values.outcome}
-          />{" "}
-          <TextField
-            hintText="Details"
-            floatingLabelText="Details"
-            onChange={handleChange("details")}
-            defaultValue={values.details}
-          />
-          <RaisedButton label="Back" primary={true} onClick={this.back} />{" "}
-          <RaisedButton
-            label="Continue"
-            primary={true}
-            onClick={this.continue}
-          />{" "}
-        </React.Fragment>{" "}
-      </MuiThemeProvider>
+      <div class="container">
+        <div className="row x-center ">
+          <div class="col s6 m-lr-auto">
+            <div class="input-field">
+              <input
+                required
+                id="date"
+                type="text"
+                placeholder="Date"
+                class="validate"
+                onChange={handleChange("date")}
+                defaultValue={values.date}
+              />
+            </div>
+            <div className="input-field">
+              <input
+                required
+                id="drug"
+                type="text"
+                class="validate"
+                onChange={handleChange("drug")}
+                defaultValue={values.drug}
+              />
+
+              <label for="drug">Drug</label>
+            </div>
+            <div className="input-field">
+              <input
+                required
+                id="batch"
+                type="text"
+                class="validate"
+                onChange={handleChange("batch")}
+                defaultValue={values.batch}
+              />
+              <label for="batch">Batch</label>
+            </div>
+            <div className="input-field">
+              <input
+                required
+                id="outcome"
+                type="text"
+                class="validate"
+                onChange={handleChange("outcome")}
+                defaultValue={values.outcome}
+              />
+              <label for="outcome">Outcome</label>
+            </div>
+            <div className="input-field">
+              <input
+                required
+                id="details"
+                type="text"
+                class="validate"
+                onChange={handleChange("details")}
+                defaultValue={values.details}
+              />
+              <label for="details">Details</label>
+            </div>
+            <a class="waves-effect waves-light btn" onClick={this.back}>
+              Back
+            </a>
+            {values.date === "" ||
+            values.drug === "" ||
+            values.batch === "" ||
+            values.outcome === "" ||
+            values.details === "" ? (
+              <a
+                disabled
+                class="waves-effect waves-light btn"
+                onClick={this.continue}
+              >
+                Continue
+              </a>
+            ) : (
+              <a class="waves-effect waves-light btn" onClick={this.continue}>
+                Continue
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
     );
   }
 }

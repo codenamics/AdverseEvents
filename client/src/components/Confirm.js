@@ -32,31 +32,27 @@ export class FormPersonalDetails extends Component {
     } = this.props;
     console.log(errors);
     return (
-      <MuiThemeProvider>
-        <React.Fragment>
-          <AppBar title="Confirm Data" />
-          <List>
-            <ListItem primaryText="Name" secondaryText={name} />{" "}
-            <h1>{errors.name}</h1>
-            <ListItem primaryText="Last name" secondaryText={lastname} />{" "}
-            <h1>{errors.lastname}</h1>
-            <ListItem primaryText="Email" secondaryText={email} />{" "}
-            <ListItem primaryText="Location" secondaryText={location} />{" "}
-            <ListItem primaryText="Phone" secondaryText={phone} />{" "}
-            <ListItem primaryText="Date" secondaryText={date} />{" "}
-            <ListItem primaryText="Drug" secondaryText={drug} />{" "}
-            <ListItem primaryText="Batch" secondaryText={batch} />{" "}
-            <ListItem primaryText="Outcome" secondaryText={outcome} />{" "}
-            <ListItem primaryText="Details" secondaryText={details} />{" "}
-          </List>{" "}
-          <RaisedButton label="Back" onClick={this.back} />{" "}
-          <RaisedButton
-            label="Confirm"
-            primary={true}
-            onClick={this.continue}
-          />{" "}
-        </React.Fragment>{" "}
-      </MuiThemeProvider>
+      <div class="container">
+        <div className="row x-center ">
+          <div class="col s6 m-lr-auto">
+            <ul class="collection">
+              <li class="collection-item">Name:{name}</li>
+              <li class="collection-item">{lastname}</li>
+              <li class="collection-item">{email}</li>
+              <li class="collection-item">{phone}</li>
+              <li class="collection-item">{location}</li>
+              <li class="collection-item">{date}</li>
+              <li class="collection-item">{drug}</li>
+              <li class="collection-item">{batch}</li>
+              <li class="collection-item">{outcome}</li>
+              <li class="collection-item">{details}</li>
+            </ul>
+            <a class="waves-effect waves-light btn" onClick={this.continue}>
+              Continue
+            </a>
+          </div>
+        </div>
+      </div>
     );
   }
 }

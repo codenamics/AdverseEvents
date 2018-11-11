@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
+import M from "materialize-css/dist/js/materialize.min.js";
+import "materialize-css/dist/css/materialize.min.css";
 
 export class FormPersonalDetails extends Component {
   continue = e => {
@@ -14,46 +12,84 @@ export class FormPersonalDetails extends Component {
     const { values, handleChange } = this.props;
 
     return (
-      <MuiThemeProvider>
-        <React.Fragment>
-          <AppBar title="Adverse Event Reporter" />
-          <TextField
-            hintText="First name"
-            floatingLabelText="First name"
-            onChange={handleChange("name")}
-            defaultValue={values.name}
-          />
-          <TextField
-            hintText="Last name"
-            floatingLabelText="Last name"
-            onChange={handleChange("lastname")}
-            defaultValue={values.lastname}
-          />
-          <TextField
-            hintText="Location"
-            floatingLabelText="Location"
-            onChange={handleChange("location")}
-            defaultValue={values.location}
-          />
-          <TextField
-            hintText="Phone"
-            floatingLabelText="Phone"
-            onChange={handleChange("phone")}
-            defaultValue={values.phone}
-          />
-          <TextField
-            hintText="Email"
-            floatingLabelText="Email"
-            onChange={handleChange("email")}
-            defaultValue={values.email}
-          />
-          <RaisedButton
-            label="Continue"
-            primary={true}
-            onClick={this.continue}
-          />
-        </React.Fragment>
-      </MuiThemeProvider>
+      <div class="container">
+        <div className="row x-center ">
+          <div class="col s6 m-lr-auto">
+            <div class="input-field">
+              <input
+                required
+                placeholder="Name"
+                id="name"
+                type="text"
+                class="validate"
+                onChange={handleChange("name")}
+                defaultValue={values.name}
+              />
+            </div>
+            <div className="input-field">
+              <input
+                required
+                placeholder="Last Name"
+                id="lastname"
+                type="text"
+                class="validate"
+                onChange={handleChange("lastname")}
+                defaultValue={values.lastname}
+              />
+            </div>
+            <div className="input-field">
+              <input
+                required
+                id="location"
+                placeholder="Location"
+                type="text"
+                class="validate"
+                onChange={handleChange("location")}
+                defaultValue={values.location}
+              />
+            </div>
+            <div className="input-field">
+              <input
+                required
+                id="phone"
+                type="text"
+                placeholder="Phone"
+                class="validate"
+                onChange={handleChange("phone")}
+                defaultValue={values.phone}
+              />
+            </div>
+            <div className="input-field">
+              <input
+                required
+                id="email"
+                placeholder="Email"
+                type="email"
+                class="validate"
+                onChange={handleChange("email")}
+                defaultValue={values.email}
+              />
+            </div>
+            {values.name === "" ||
+            values.lastname === "" ||
+            values.email === "" ||
+            values.phone === "" ||
+            values.location === "" ? (
+              <a
+                disabled
+                class="waves-effect waves-light btn"
+                onClick={this.continue}
+              >
+                Continue
+              </a>
+            ) : (
+              <a class="waves-effect waves-light btn" onClick={this.continue}>
+                Continue
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -35,7 +35,11 @@ export class UserForm extends Component {
     axios
       .post("http://localhost:5000/send", adverseData)
       .then(res => console.log(res))
-      .catch(err => this.setState({ errors: err.response.data }));
+      .catch(err =>
+        this.setState({
+          errors: err.response.data
+        })
+      );
   };
   nextStep = () => {
     const { step } = this.state;
@@ -53,6 +57,7 @@ export class UserForm extends Component {
     this.setState({
       [input]: e.target.value
     });
+    console.log(e.target.value);
   };
 
   render() {
