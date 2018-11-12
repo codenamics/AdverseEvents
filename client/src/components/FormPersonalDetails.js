@@ -50,7 +50,7 @@ export class FormPersonalDetails extends Component {
               <input
                 required
                 id="email"
-                placeholder="Email"
+                placeholder="user@domain.com"
                 type="email"
                 class="validate"
                 onChange={handleChange("email")}

@@ -57,7 +57,6 @@ export class UserForm extends Component {
     this.setState({
       [input]: e.target.value
     });
-    console.log(e.target.value);
   };
 
   render() {
