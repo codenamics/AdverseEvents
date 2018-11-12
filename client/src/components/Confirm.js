@@ -34,56 +34,50 @@ export class FormPersonalDetails extends Component {
             <ul class="collection">
               <li class="collection-item flex justify-sb">
                 {" "}
-                <div>Name:</div> <div>{name}</div>{" "}
+                <div> Name: </div> <div>{name}</div>{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Last Name:</div> {lastname}{" "}
+                <div> Last Name: </div> {lastname}{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Email:</div>
-                <div>{email}</div>{" "}
+                <div> Email: </div> <div> {email} </div>{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Phone:</div>
-                <div>{phone}</div>{" "}
+                <div> Phone: </div> <div> {phone} </div>{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Location</div>
-                <div>{location}</div>{" "}
+                <div> Location </div> <div> {location} </div>{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Date:</div> <div>{date} </div>
+                <div> Date: </div> <div>{date} </div>
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Drug:</div> <div>{drug}</div>{" "}
+                <div> Drug: </div> <div>{drug}</div>{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Batch:</div>
-                <div>{batch}</div>{" "}
+                <div> Batch: </div> <div> {batch} </div>{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Outcome:</div>
-                <div>{outcome}</div>{" "}
+                <div> Outcome: </div> <div> {outcome} </div>{" "}
               </li>{" "}
               <li class="collection-item flex justify-sb">
-                <div>Detials:</div>
-                <div>{details}</div>{" "}
+                <div> Detials: </div> <div> {details} </div>{" "}
               </li>{" "}
             </ul>{" "}
-            <button
-              href="#"
-              class="waves-effect waves-light btn"
-              onClick={this.back}
-            >
-              Back" "}
-            </button>
-            <button
-              href="#"
-              class="waves-effect waves-light btn"
-              onClick={this.continue}
-            >
-              Continue{" "}
-            </button>{" "}
+            <div className="center-align">
+              <button
+                class="waves-effect waves-light btn ml-1 blue darken-1"
+                onClick={this.back}
+              >
+                Back{" "}
+              </button>{" "}
+              <button
+                class="waves-effect waves-light btn ml-1 blue darken-1"
+                onClick={this.continue}
+              >
+                Continue{" "}
+              </button>{" "}
+            </div>
           </div>{" "}
         </div>{" "}
       </div>

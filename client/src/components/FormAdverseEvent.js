@@ -22,6 +22,7 @@ export class FormAdverseEvent extends Component {
           <div class="col l6 s12 m-lr-auto">
             <div class="input-field">
               <input
+                placeholder="Date"
                 required
                 id="date"
                 type="date"
@@ -30,9 +31,15 @@ export class FormAdverseEvent extends Component {
                 onChange={handleChange("date")}
                 defaultValue={values.date}
               />{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
             </div>{" "}
             <div className="input-field">
               <input
+                placeholder="Drug"
                 required
                 id="drug"
                 type="text"
@@ -40,10 +47,15 @@ export class FormAdverseEvent extends Component {
                 onChange={handleChange("drug")}
                 defaultValue={values.drug}
               />
-              <label for="drug"> Drug </label>{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
             </div>{" "}
             <div className="input-field">
               <input
+                placeholder="Batch"
                 required
                 id="batch"
                 type="text"
@@ -51,10 +63,15 @@ export class FormAdverseEvent extends Component {
                 onChange={handleChange("batch")}
                 defaultValue={values.batch}
               />{" "}
-              <label for="batch"> Batch </label>{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
             </div>{" "}
             <div className="input-field">
               <input
+                placeholder="Outcome"
                 required
                 id="outcome"
                 type="text"
@@ -62,39 +79,57 @@ export class FormAdverseEvent extends Component {
                 onChange={handleChange("outcome")}
                 defaultValue={values.outcome}
               />{" "}
-              <label for="outcome"> Outcome </label>{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
             </div>{" "}
             <div className="input-field">
-              <input
+              <textarea
+                id="textarea1"
+                class="materialize-textarea validate"
+                placeholder="Details"
                 required
                 id="details"
                 type="text"
-                class="validate"
                 onChange={handleChange("details")}
                 defaultValue={values.details}
-              />{" "}
-              <label for="details"> Details </label>{" "}
-            </div>{" "}
-            <a class="waves-effect waves-light btn" onClick={this.back}>
-              Back{" "}
-            </a>{" "}
-            {values.date === "" ||
-            values.drug === "" ||
-            values.batch === "" ||
-            values.outcome === "" ||
-            values.details === "" ? (
+              />
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
+            </div>
+            <div className="center-align">
               <a
-                disabled
-                class="waves-effect waves-light btn"
-                onClick={this.continue}
+                class="waves-effect waves-light btn blue darken-1"
+                onClick={this.back}
               >
-                Continue{" "}
+                Back
               </a>
-            ) : (
-              <a class="waves-effect waves-light btn" onClick={this.continue}>
-                Continue{" "}
-              </a>
-            )}{" "}
+              {values.date === "" ||
+              values.drug === "" ||
+              values.batch === "" ||
+              values.outcome === "" ||
+              values.details === "" ? (
+                <a
+                  disabled
+                  class="waves-effect waves-light btn ml-1 blue darken-1"
+                  onClick={this.continue}
+                >
+                  Continue{" "}
+                </a>
+              ) : (
+                <a
+                  class="waves-effect waves-light btn ml-1 blue darken-1"
+                  onClick={this.continue}
+                >
+                  Continue{" "}
+                </a>
+              )}
+            </div>{" "}
           </div>{" "}
         </div>{" "}
       </div>

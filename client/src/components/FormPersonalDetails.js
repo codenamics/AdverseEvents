@@ -24,6 +24,11 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("name")}
                 defaultValue={values.name}
               />{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
             </div>{" "}
             <div className="input-field">
               <input
@@ -35,6 +40,27 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("lastname")}
                 defaultValue={values.lastname}
               />{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
+            </div>{" "}
+            <div className="input-field">
+              <input
+                required
+                id="email"
+                placeholder="Email"
+                type="email"
+                class="validate"
+                onChange={handleChange("email")}
+                defaultValue={values.email}
+              />
+              <span
+                class="helper-text"
+                data-error="Wrong email format"
+                data-success="right"
+              />
             </div>{" "}
             <div className="input-field">
               <input
@@ -46,6 +72,11 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("location")}
                 defaultValue={values.location}
               />{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
             </div>{" "}
             <div className="input-field">
               <input
@@ -57,35 +88,34 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("phone")}
                 defaultValue={values.phone}
               />{" "}
+              <span
+                class="helper-text"
+                data-error="Field is required"
+                data-success=""
+              />
             </div>{" "}
-            <div className="input-field">
-              <input
-                required
-                id="email"
-                placeholder="Email"
-                type="email"
-                class="validate"
-                onChange={handleChange("email")}
-                defaultValue={values.email}
-              />{" "}
+            <div className="center-align">
+              {values.name === "" ||
+              values.lastname === "" ||
+              values.email === "" ||
+              values.phone === "" ||
+              values.location === "" ? (
+                <a
+                  disabled
+                  class="waves-effect waves-light btn blue darken-1"
+                  onClick={this.continue}
+                >
+                  Continue{" "}
+                </a>
+              ) : (
+                <a
+                  class="waves-effect waves-light btn ml-1 blue darken-1"
+                  onClick={this.continue}
+                >
+                  Continue{" "}
+                </a>
+              )}
             </div>{" "}
-            {values.name === "" ||
-            values.lastname === "" ||
-            values.email === "" ||
-            values.phone === "" ||
-            values.location === "" ? (
-              <a
-                disabled
-                class="waves-effect waves-light btn"
-                onClick={this.continue}
-              >
-                Continue{" "}
-              </a>
-            ) : (
-              <a class="waves-effect waves-light btn" onClick={this.continue}>
-                Continue{" "}
-              </a>
-            )}{" "}
           </div>{" "}
         </div>{" "}
       </div>
