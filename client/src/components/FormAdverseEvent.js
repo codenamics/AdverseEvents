@@ -23,7 +23,6 @@ export class FormAdverseEvent extends Component {
             <label htmlFor="date">Date</label>
             <div class="input-field">
               <input
-                placeholder="Date"
                 required
                 id="date"
                 type="date"
@@ -96,7 +95,6 @@ export class FormAdverseEvent extends Component {
                 class="materialize-textarea validate"
                 placeholder="Details"
                 required
-                id="details"
                 type="text"
                 onChange={handleChange("details")}
                 defaultValue={values.details}
@@ -108,31 +106,31 @@ export class FormAdverseEvent extends Component {
               />
             </div>
             <div className="center-align">
-              <a
+              <button
                 class="waves-effect waves-light btn blue darken-1"
                 onClick={this.back}
               >
                 Back
-              </a>
+              </button>
               {values.date === "" ||
               values.drug === "" ||
               values.batch === "" ||
               values.outcome === "" ||
               values.details === "" ? (
-                <a
+                <button
                   disabled
                   class="waves-effect waves-light btn ml-1 blue darken-1"
                   onClick={this.continue}
                 >
                   Continue{" "}
-                </a>
+                </button>
               ) : (
-                <a
+                <button
                   class="waves-effect waves-light btn ml-1 blue darken-1"
                   onClick={this.continue}
                 >
                   Continue{" "}
-                </a>
+                </button>
               )}
             </div>{" "}
           </div>{" "}

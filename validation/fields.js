@@ -40,7 +40,7 @@ const validatedInput = (data) => {
         errors.location = 'Location field is required';
     }
     if (!Validator.isLength(data.phone, {
-            min: 6
+            min: 9
         })) {
         errors.phone = 'Phone must be between at least 6 characters';
     }

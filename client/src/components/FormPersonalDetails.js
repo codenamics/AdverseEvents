@@ -87,8 +87,8 @@ export class FormPersonalDetails extends Component {
               <input
                 required
                 id="phone"
-                type="phone"
-                placeholder="Phone"
+                type="tel"
+                placeholder="e.g +48 999-999-9999"
                 class="validate"
                 onChange={handleChange("phone")}
                 defaultValue={values.phone}
@@ -105,24 +105,24 @@ export class FormPersonalDetails extends Component {
               values.email === "" ||
               values.phone === "" ||
               values.location === "" ? (
-                <a
+                <button
                   disabled
                   class="waves-effect waves-light btn blue darken-1"
                   onClick={this.continue}
                 >
                   Continue{" "}
-                </a>
+                </button>
               ) : (
-                <a
+                <button
                   class="waves-effect waves-light btn ml-1 blue darken-1"
                   onClick={this.continue}
                 >
                   Continue{" "}
-                </a>
+                </button>
               )}
             </div>{" "}
           </div>{" "}
-        </div>{" "}
+        </div>
       </div>
     );
   }

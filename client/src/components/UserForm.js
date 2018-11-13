@@ -35,7 +35,11 @@ export class UserForm extends Component {
     };
     axios
       .post("http://localhost:5000/send", adverseData)
-      .then(res => this.setState({ success: res.data.msg }))
+      .then(res =>
+        this.setState({
+          success: res.data.msg
+        })
+      )
       .catch(err =>
         this.setState({
           errors: err.response.data
@@ -93,6 +97,7 @@ export class UserForm extends Component {
       outcome,
       details
     };
+    // eslint-disable-next-line
     switch (step) {
       case 1:
         return (

@@ -8,6 +8,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h4 {
+    text-align: center;
+    color: green
+}
+
 .input-field input[type=text]:focus {
     border-bottom: 1px solid #1976d2 !important;
     box-shadow: 0 1px 0 0 #000;
@@ -15,6 +20,17 @@ body {
 
 .ml-1 {
     margin-left: 10px;
+}
+
+.details {
+    max-width: 100%;
+    padding: 20px;
+    min-height: 0;
+
+}
+
+p {
+    width: 100% !important;
 }
 
 .mb-3 {
@@ -39,7 +55,8 @@ body {
 }
 
 .collection-item {
-    text-align: left
+    text-align: left;
+    min-height: 0;
 }
 
 .m-lr-auto {
