@@ -42,7 +42,7 @@ const validatedInput = (data) => {
     if (!Validator.isLength(data.phone, {
             min: 9
         })) {
-        errors.phone = 'Phone must be between at least 6 characters';
+        errors.phone = 'Phone must be between at least 9 characters';
     }
 
     if (Validator.isEmpty(data.phone)) {
