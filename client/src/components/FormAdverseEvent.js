@@ -20,6 +20,7 @@ export class FormAdverseEvent extends Component {
       <div class="container">
         <div className="row x-center ">
           <div class="col l6 s12 m-lr-auto">
+            <label htmlFor="date">Date</label>
             <div class="input-field">
               <input
                 placeholder="Date"
@@ -37,6 +38,7 @@ export class FormAdverseEvent extends Component {
                 data-success=""
               />
             </div>{" "}
+            <label htmlFor="drug">Drug</label>
             <div className="input-field">
               <input
                 placeholder="Drug"
@@ -53,6 +55,7 @@ export class FormAdverseEvent extends Component {
                 data-success=""
               />
             </div>{" "}
+            <label htmlFor="Batch">Batch</label>
             <div className="input-field">
               <input
                 placeholder="Batch"
@@ -69,6 +72,7 @@ export class FormAdverseEvent extends Component {
                 data-success=""
               />
             </div>{" "}
+            <label htmlFor="outcome">Outcome</label>
             <div className="input-field">
               <input
                 placeholder="Outcome"
@@ -85,6 +89,7 @@ export class FormAdverseEvent extends Component {
                 data-success=""
               />
             </div>{" "}
+            <label htmlFor="textarea1">Detials</label>
             <div className="input-field">
               <textarea
                 id="textarea1"

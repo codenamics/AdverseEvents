@@ -14,6 +14,7 @@ export class FormPersonalDetails extends Component {
       <div class="container">
         <div className="row x-center ">
           <div class="col l6 s12 m-lr-auto">
+            <label htmlFor="name">Name</label>
             <div class="input-field">
               <input
                 required
@@ -30,6 +31,7 @@ export class FormPersonalDetails extends Component {
                 data-success=""
               />
             </div>{" "}
+            <label htmlFor="lastname">Lastname</label>
             <div className="input-field">
               <input
                 required
@@ -46,6 +48,7 @@ export class FormPersonalDetails extends Component {
                 data-success=""
               />
             </div>{" "}
+            <label htmlFor="email">Email</label>
             <div className="input-field">
               <input
                 required
@@ -62,6 +65,7 @@ export class FormPersonalDetails extends Component {
                 data-success="right"
               />
             </div>{" "}
+            <label htmlFor="location">Location</label>
             <div className="input-field">
               <input
                 required
@@ -78,11 +82,12 @@ export class FormPersonalDetails extends Component {
                 data-success=""
               />
             </div>{" "}
+            <label htmlFor="phone">Phone</label>
             <div className="input-field">
               <input
                 required
                 id="phone"
-                type="text"
+                type="phone"
                 placeholder="Phone"
                 class="validate"
                 onChange={handleChange("phone")}
