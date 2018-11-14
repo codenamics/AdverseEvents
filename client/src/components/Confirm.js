@@ -41,7 +41,8 @@ export class Confirm extends Component {
             <ul class="collection">
               <li class="collection-item flex justify-sb">
                 {" "}
-                <div> Name: </div> <div>{name}</div>
+                {/* <div> Name: </div> <div>{name}</div> */}
+                <input type="text" disabled defaultValue={name} />
               </li>{" "}
               {errors.name ? (
                 <li className="collection-item red-text"> {errors.name} </li>

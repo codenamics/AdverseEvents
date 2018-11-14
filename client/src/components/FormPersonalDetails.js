@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "materialize-css/dist/css/materialize.min.css";
-import M from "materialize-css/dist/js/materialize.min.js";
+
 export class FormPersonalDetails extends Component {
   continue = e => {
     e.preventDefault();
@@ -11,9 +10,9 @@ export class FormPersonalDetails extends Component {
     const { values, handleChange } = this.props;
 
     return (
-      <div class="container">
-        <div className="row x-center ">
-          <div class="col l6 s12 m-lr-auto">
+      <div class="grid grid-form">
+        <div class="col col-left flex">
+          <div className="container">
             <label htmlFor="name">Name</label>
             <div class="input-field">
               <input
@@ -25,11 +24,6 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("name")}
                 defaultValue={values.name}
               />{" "}
-              <span
-                class="helper-text"
-                data-error="Field is required"
-                data-success=""
-              />
             </div>{" "}
             <label htmlFor="lastname">Lastname</label>
             <div className="input-field">
@@ -42,14 +36,9 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("lastname")}
                 defaultValue={values.lastname}
               />{" "}
-              <span
-                class="helper-text"
-                data-error="Field is required"
-                data-success=""
-              />
             </div>{" "}
             <label htmlFor="email">Email</label>
-            <div className="input-field">
+            <div>
               <input
                 required
                 id="email"
@@ -58,11 +47,6 @@ export class FormPersonalDetails extends Component {
                 class="validate"
                 onChange={handleChange("email")}
                 defaultValue={values.email}
-              />
-              <span
-                class="helper-text"
-                data-error="Wrong email format"
-                data-success="right"
               />
             </div>{" "}
             <label htmlFor="location">Location</label>
@@ -76,11 +60,6 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("location")}
                 defaultValue={values.location}
               />{" "}
-              <span
-                class="helper-text"
-                data-error="Field is required"
-                data-success=""
-              />
             </div>{" "}
             <label htmlFor="phone">Phone</label>
             <div className="input-field">
@@ -93,13 +72,8 @@ export class FormPersonalDetails extends Component {
                 onChange={handleChange("phone")}
                 defaultValue={values.phone}
               />{" "}
-              <span
-                class="helper-text"
-                data-error="Field is required"
-                data-success=""
-              />
             </div>{" "}
-            <div className="center-align">
+            <div className="flex">
               {values.name === "" ||
               values.lastname === "" ||
               values.email === "" ||
@@ -121,8 +95,9 @@ export class FormPersonalDetails extends Component {
                 </button>
               )}
             </div>{" "}
-          </div>{" "}
+          </div>
         </div>
+        <div className="col col-right" />
       </div>
     );
   }

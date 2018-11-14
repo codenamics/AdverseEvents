@@ -9,7 +9,8 @@ const validatedInput = (data) => {
     data.location = !isEmpty(data.location) ? data.location : '';
     data.phone = !isEmpty(data.phone) ? data.phone : '';
     data.email = !isEmpty(data.email) ? data.email : '';
-    data.date = !isEmpty(data.date) ? data.date : '';
+    data.start_date = !isEmpty(data.start_date) ? data.start_date : '';
+    data.end_date = !isEmpty(data.end_date) ? data.end_date : '';
     data.drug = !isEmpty(data.drug) ? data.drug : '';
     data.batch = !isEmpty(data.batch) ? data.batch : '';
     data.outcome = !isEmpty(data.outcome) ? data.outcome : '';
@@ -52,8 +53,11 @@ const validatedInput = (data) => {
         errors.email = 'Email is badly formatted';
     }
 
-    if (Validator.isEmpty(data.date)) {
-        errors.date = 'Date field is required';
+    if (Validator.isEmpty(data.start_date)) {
+        errors.start_date = 'Start date field is required';
+    }
+    if (Validator.isEmpty(data.end_date)) {
+        errors.end_date = 'End date field is required';
     }
     if (Validator.isEmpty(data.drug)) {
         errors.drug = 'Drug field is required';

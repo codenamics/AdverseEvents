@@ -6,59 +6,99 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-h4 {
-    text-align: center;
-    color: green
-}
-
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid #1976d2 !important;
-    box-shadow: 0 1px 0 0 #000;
-}
-
-.ml-1 {
-    margin-left: 10px;
-}
-
-.details {
-    max-width: 100%;
-    padding: 20px;
-    min-height: 0;
 
 }
 
-p {
-    width: 100% !important;
+.grid {
+    display: grid;
+
 }
 
-.mb-3 {
-    margin-bottom: 30px;
-}
-
-.input-field {
-    margin: 0 !important
+.container {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .flex {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.justify-sb {
-    justify-content: space-between;
+
+
+.col {
+    height: 100vh;
+    width: 100%
 }
 
-.x-center {
-    display: flex;
-    justify-content: center
+.grid-form {
+    grid-template-columns: 1fr 1fr;
+
+
 }
 
-.collection-item {
-    text-align: left;
-    min-height: 0;
+@media (max-width: 768px) {
+    .grid-form {
+        grid-template-columns: 1fr;
+
+
+    }
 }
 
-.m-lr-auto {
-    margin: 0 auto;
+.col-right {
+    background-image: url('./assets/arm.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.input-field {
+    width: 100%;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid rgba(231, 231, 231, 0.664);
+    border-radius: 3px;
+    max-width: 494.854px;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+
+select {
+    background: none;
+}
+
+button {
+    font-weight: 600;
+    font-size: 12px;
+    max-height: 40px;
+    padding: 13px 10px;
+    min-width: 190px;
+    text-decoration: none;
+    text-align: center;
+    background: #56ccf2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #4893f5, #56ccf2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top,
+        #4893f5,
+        #56ccf2);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.ml-20 {
+    margin-left: 20px !important;
 }

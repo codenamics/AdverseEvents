@@ -18,7 +18,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
-  const { errors, isValid } = validatedInput(req.body);
+  const {
+    errors,
+    isValid
+  } = validatedInput(req.body);
 
   // Check Validation
   if (!isValid) {
@@ -32,7 +35,8 @@ app.post("/send", (req, res) => {
         <li>Location: <h3>${req.body.location}</h3></li>
         <li>Phone: <h3>${req.body.phone}</h3></li>
         <li>Phone: <h3>${req.body.email}</h3></li>
-        <li>Date: <h3>${req.body.date}</h3></li>
+        <li>Start Date: <h3>${req.body.start_date}</h3></li>
+        <li>End Date: <h3>${req.body.end_date}</h3></li>
         <li>Drug: <h3>${req.body.drug}</h3> </li>
         <li>Batch number: <h3>${req.body.batch}</h3></li>
         <li>Adverse Event Outcome: <h3>${req.body.outcome}</h3></li>

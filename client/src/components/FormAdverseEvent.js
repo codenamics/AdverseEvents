@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
-import "materialize-css/dist/css/materialize.min.css";
 
 export class FormAdverseEvent extends Component {
   continue = e => {
@@ -14,29 +12,12 @@ export class FormAdverseEvent extends Component {
 
   render() {
     const { values, handleChange } = this.props;
-
     console.log(values);
     return (
-      <div class="container">
-        <div className="row x-center ">
-          <div class="col l6 s12 m-lr-auto">
-            <label htmlFor="date">Date</label>
-            <div class="input-field">
-              <input
-                required
-                id="date"
-                type="date"
-                placeholder="Date"
-                class="validate"
-                onChange={handleChange("date")}
-                defaultValue={values.date}
-              />{" "}
-              <span
-                class="helper-text"
-                data-error="Field is required"
-                data-success=""
-              />
-            </div>{" "}
+      <div className="grid grid-form">
+        <div class="col col-left flex">
+          <div className="container">
+            {" "}
             <label htmlFor="drug">Drug</label>
             <div className="input-field">
               <input
@@ -48,11 +29,30 @@ export class FormAdverseEvent extends Component {
                 onChange={handleChange("drug")}
                 defaultValue={values.drug}
               />
-              <span
-                class="helper-text"
-                data-error="Field is required"
-                data-success=""
-              />
+            </div>
+            <label htmlFor="date-start">Start Date of Adverse Event</label>
+            <div class="input-field">
+              <input
+                required
+                id="date-start"
+                type="date"
+                placeholder="Start date"
+                class="validate"
+                onChange={handleChange("start_date")}
+                defaultValue={values.start_date}
+              />{" "}
+            </div>{" "}
+            <label htmlFor="date-end">End Date of Adverse Event</label>
+            <div class="input-field">
+              <input
+                required
+                id="date-end"
+                type="date"
+                placeholder="End date"
+                class="validate"
+                onChange={handleChange("end_date")}
+                defaultValue={values.end_date}
+              />{" "}
             </div>{" "}
             <label htmlFor="Batch">Batch</label>
             <div className="input-field">
@@ -71,23 +71,18 @@ export class FormAdverseEvent extends Component {
                 data-success=""
               />
             </div>{" "}
-            <label htmlFor="outcome">Outcome</label>
-            <div className="input-field">
-              <input
-                placeholder="Outcome"
-                required
-                id="outcome"
-                type="text"
-                class="validate"
-                onChange={handleChange("outcome")}
-                defaultValue={values.outcome}
-              />{" "}
-              <span
-                class="helper-text"
-                data-error="Field is required"
-                data-success=""
-              />
-            </div>{" "}
+            <label>
+              Outcome:
+              <select onChange={handleChange("outcome")}>
+                <option value="Recovered">Recovered</option>
+                <option value="Getting better">Getting better</option>
+                <option value="Continue side-effects">
+                  Continue side-effects
+                </option>
+                <option value="Death">Death</option>
+                <option value="Unknown">Unknown</option>
+              </select>
+            </label>
             <label htmlFor="textarea1">Detials</label>
             <div className="input-field">
               <textarea
@@ -105,7 +100,7 @@ export class FormAdverseEvent extends Component {
                 data-success=""
               />
             </div>
-            <div className="center-align">
+            <div className="flex">
               <button
                 class="waves-effect waves-light btn blue darken-1"
                 onClick={this.back}
@@ -116,25 +111,21 @@ export class FormAdverseEvent extends Component {
               values.drug === "" ||
               values.batch === "" ||
               values.outcome === "" ||
-              values.details === "" ? (
-                <button
-                  disabled
-                  class="waves-effect waves-light btn ml-1 blue darken-1"
-                  onClick={this.continue}
-                >
+              values.details === "" ||
+              values.start_date === "" ||
+              values.end_date === "" ? (
+                <button disabled className="ml-20" onClick={this.continue}>
                   Continue{" "}
                 </button>
               ) : (
-                <button
-                  class="waves-effect waves-light btn ml-1 blue darken-1"
-                  onClick={this.continue}
-                >
+                <button className="ml-20" onClick={this.continue}>
                   Continue{" "}
                 </button>
               )}
             </div>{" "}
-          </div>{" "}
+          </div>
         </div>{" "}
+        <div className="col col-right" />
       </div>
     );
   }

@@ -12,12 +12,15 @@ export class UserForm extends Component {
     location: "",
     phone: "",
     email: "",
-    date: "",
+
     drug: "",
+    start_date: "",
+    end_date: "",
     batch: "",
     outcome: "",
     details: "",
     errors: {},
+
     success: ""
   };
   submitData = () => {
@@ -27,11 +30,14 @@ export class UserForm extends Component {
       location: this.state.location,
       phone: this.state.phone,
       email: this.state.email,
-      date: this.state.date,
+
       drug: this.state.drug,
       batch: this.state.batch,
       outcome: this.state.outcome,
-      details: this.state.details
+      details: this.state.details,
+      start_date: this.state.start_date,
+
+      end_date: this.state.end_date
     };
     axios
       .post("http://localhost:5000/send", adverseData)
@@ -76,13 +82,15 @@ export class UserForm extends Component {
       location,
       phone,
       email,
-      date,
+
       drug,
       batch,
       outcome,
       details,
       errors,
-      success
+      success,
+      start_date,
+      end_date
     } = this.state;
     const values = {
       step,
@@ -91,11 +99,13 @@ export class UserForm extends Component {
       location,
       phone,
       email,
-      date,
+
       drug,
       batch,
       outcome,
-      details
+      details,
+      start_date,
+      end_date
     };
     // eslint-disable-next-line
     switch (step) {

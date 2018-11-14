@@ -9,15 +9,14 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <nav className="blue darken-1 mb-3">
-            <div class="nav-wrapper">
-              <div class="brand-logo center">Adverse Event Form </div>{" "}
-            </div>
-          </nav>
+          {/* <nav className="blue darken-1 mb-3">
+                    <div class="nav-wrapper">
+                      <div class="brand-logo center">Adverse Event Form </div>{" "}
+                    </div>
+                  </nav> */}
           <Switch>
             <Route exact path="/" component={UserForm} />
-
-            <Route exact path="/success" component={Success} />
+            <Route exact path="/success" component={Success} />{" "}
           </Switch>
         </div>
       </Router>
