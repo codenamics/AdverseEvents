@@ -17,10 +17,10 @@ export class FormAdverseEvent extends Component {
       <div className="grid grid-form">
         <div class="col col-left flex">
           <div className="container">
-            <div className="wizard">
-              <div className="a">Personal data</div>
-              <div className="a">Adverse Event Details</div>
-              <div />
+            <div class="idea-timeline-numbers">
+              <span class="idea-timeline-value flex complete-step">1.</span>
+              <span class="idea-timeline-value flex complete-step">2.</span>
+              <span class="idea-timeline-value flex">3.</span>
             </div>
             <label htmlFor="drug">Drug</label>
             <div className="input-field">
@@ -77,7 +77,13 @@ export class FormAdverseEvent extends Component {
             </div>{" "}
             <label>
               Outcome:
-              <select onChange={handleChange("outcome")}>
+              <select
+                defaultValue={values.outcome}
+                onChange={handleChange("outcome")}
+              >
+                <option value="" disabled selected>
+                  Select your option
+                </option>
                 <option value="Recovered">Recovered</option>
                 <option value="Getting better">Getting better</option>
                 <option value="Continue side-effects">
@@ -118,7 +124,7 @@ export class FormAdverseEvent extends Component {
               values.details === "" ||
               values.start_date === "" ||
               values.end_date === "" ? (
-                <button className="ml-20" onClick={this.continue}>
+                <button disabled className="ml-20" onClick={this.continue}>
                   Continue{" "}
                 </button>
               ) : (

@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 ul {
   list-style: none;
   width: 100%;
@@ -25,8 +26,13 @@ ul li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.a {
+.step {
   background: #4893f5;
+  border: 1px solid rgba(231, 231, 231, 0.664);
+  padding: 15px 5px;
+}
+.step-next {
+  border: 1px solid rgba(231, 231, 231, 0.664);
 }
 .container {
   width: 70%;
@@ -70,8 +76,11 @@ ul li {
 
 .input-field {
   width: 100%;
+  margin-top: 5px;
 }
-
+.m-60 {
+  margin: 60px auto;
+}
 input,
 select,
 textarea {
@@ -85,11 +94,20 @@ textarea {
   outline: none;
   font-size: 14px;
 }
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #55a8fd;
+}
 input[type="date"]::before {
   content: attr(data-placeholder);
   width: 100%;
 }
 
+input[type="date"]:valid::before {
+  display: none;
+}
+input[type="date"]:focus::before,
 input[type="date"]:valid::before {
   display: none;
 }
@@ -106,12 +124,8 @@ button {
   min-width: 190px;
   text-decoration: none;
   text-align: center;
-  background: #56ccf2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #4893f5, #56ccf2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #4893f5, #56ccf2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #55a8fd;
+
   border: none;
   color: #fff;
   cursor: pointer;
@@ -129,4 +143,42 @@ button:disabled {
   .grid-form {
     grid-template-columns: 1fr;
   }
+  .col {
+    height: 100%;
+    width: 100%;
+  }
+}
+.idea-timeline-numbers {
+  margin: 80px auto 50px;
+  position: relative;
+  width: 90%;
+  max-width: 830px;
+  border-top: 1px dashed #eceef3;
+}
+.idea-timeline-value {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  position: absolute;
+  top: -13px;
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: "AvenirNext-Demi", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #55a8fd;
+  border: 1px solid #4893f5;
+}
+.complete-step {
+  color: #fff;
+  background: #55a8fd;
+}
+.idea-timeline-value:nth-of-type(1) {
+  left: 0;
+}
+.idea-timeline-value:nth-of-type(2) {
+  left: calc(50% - 10px);
+}
+.idea-timeline-value:nth-of-type(3) {
+  right: 0;
 }

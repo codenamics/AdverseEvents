@@ -35,7 +35,12 @@ export class Confirm extends Component {
       this.props.history.push("/success");
     }
     return (
-      <div className="container">
+      <div className="container m-60">
+        <div class="idea-timeline-numbers">
+          <span class="idea-timeline-value flex complete-step">1.</span>
+          <span class="idea-timeline-value flex complete-step">2.</span>
+          <span class="idea-timeline-value flex complete-step">3.</span>
+        </div>
         <div class="col-con flex flex-column">
           <ul class="collection">
             <li class="collection-item ">

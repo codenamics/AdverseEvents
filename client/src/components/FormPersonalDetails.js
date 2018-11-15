@@ -13,10 +13,10 @@ export class FormPersonalDetails extends Component {
       <div class="grid grid-form">
         <div class="col col-left flex">
           <div className="container">
-            <div className="wizard">
-              <div className="a">Personal data</div>
-              <div />
-              <div />
+            <div class="idea-timeline-numbers">
+              <span class="idea-timeline-value flex complete-step">1.</span>
+              <span class="idea-timeline-value flex">2.</span>
+              <span class="idea-timeline-value flex">3.</span>
             </div>
             <label htmlFor="name"> Name </label>
             <div class="input-field">
