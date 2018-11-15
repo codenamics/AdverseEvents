@@ -22,11 +22,12 @@ export class Confirm extends Component {
         email,
         phone,
         location,
-        date,
         drug,
         batch,
         outcome,
-        details
+        details,
+        start_date,
+        end_date
       },
       errors
     } = this.props;
@@ -34,97 +35,93 @@ export class Confirm extends Component {
       this.props.history.push("/success");
     }
     return (
-      <div class="container">
-        <div className="row x-center ">
-          <div class="col l6 s12 m-lr-auto">
-            {" "}
-            <ul class="collection">
-              <li class="collection-item flex justify-sb">
-                {" "}
-                {/* <div> Name: </div> <div>{name}</div> */}
-                <input type="text" disabled defaultValue={name} />
-              </li>{" "}
+      <div className="container">
+        <div class="col-con flex flex-column">
+          <ul class="collection">
+            <li class="collection-item ">
+              <div className="item-head"> Name: </div> <div>{name}</div>
               {errors.name ? (
-                <li className="collection-item red-text"> {errors.name} </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Last Name: </div> {lastname}{" "}
-              </li>{" "}
+                <span className="error">{errors.name}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Last Name: </div>
+              <div> {lastname}</div>
               {errors.lastname ? (
-                <li className="collection-item red-text">
-                  {" "}
-                  {errors.lastname}{" "}
-                </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Email: </div> <div> {email} </div>{" "}
-              </li>{" "}
+                <span className="error">{errors.lastname}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Email: </div> <div> {email} </div>
               {errors.email ? (
-                <li className="collection-item red-text"> {errors.email} </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Phone: </div> <div> {phone} </div>{" "}
-              </li>{" "}
+                <span className="error">{errors.email}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Phone: </div> <div> {phone} </div>
               {errors.phone ? (
-                <li className="collection-item red-text"> {errors.phone} </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Location </div> <div> {location} </div>{" "}
-              </li>{" "}
+                <span className="error">{errors.phone}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Location </div>
+              <div> {location} </div>
               {errors.location ? (
-                <li className="collection-item red-text">
-                  {" "}
-                  {errors.location}{" "}
-                </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Date: </div> <div>{date} </div>
-              </li>{" "}
-              {errors.date ? (
-                <li className="collection-item red-text"> {errors.date} </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Drug: </div> <div>{drug}</div>{" "}
-              </li>{" "}
+                <span className="error">{errors.location}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Date: </div> <div>{start_date} </div>
+              {errors.start_date ? (
+                <span className="error">{errors.start_date}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Date: </div> <div>{end_date} </div>
+              {errors.end_date ? (
+                <span className="error">{errors.end_date}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Drug: </div> <div>{drug}</div>
               {errors.drug ? (
-                <li className="collection-item red-text"> {errors.drug} </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Batch: </div> <div> {batch} </div>{" "}
-              </li>{" "}
+                <span className="error">{errors.drug}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Batch: </div> <div> {batch} </div>
               {errors.batch ? (
-                <li className="collection-item red-text"> {errors.batch} </li>
-              ) : null}{" "}
-              <li class="collection-item flex justify-sb">
-                <div> Outcome: </div> <div> {outcome} </div>{" "}
-              </li>{" "}
+                <span className="error">{errors.batch}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Outcome: </div> <div> {outcome} </div>
               {errors.outcome ? (
-                <li className="collection-item red-text"> {errors.outcome} </li>
-              ) : null}{" "}
-              <div className="details">
-                Details: <br />
-                <p>{details}</p>
-              </div>
+                <span className="error">{errors.outcome}</span>
+              ) : null}
+            </li>
+            <li class="collection-item  justify-sb">
+              <div className="item-head"> Details: </div> <div> {details} </div>
               {errors.details ? (
-                <li className="collection-item red-text"> {errors.details} </li>
-              ) : null}{" "}
-            </ul>{" "}
-            <div className="center-align">
-              <button
-                class="waves-effect waves-light btn ml-1 blue darken-1"
-                onClick={this.back}
-              >
-                Back{" "}
-              </button>{" "}
-              <button
-                class="waves-effect waves-light btn ml-1 blue darken-1"
-                onClick={this.continue}
-              >
-                Continue{" "}
-              </button>{" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
+                <span className="error">{errors.details}</span>
+              ) : null}
+            </li>
+          </ul>
+          <div>
+            <button
+              class="waves-effect waves-light btn ml-1 blue darken-1"
+              onClick={this.back}
+            >
+              Back
+            </button>
+            <button
+              class="waves-effect waves-light btn ml-1 blue darken-1"
+              onClick={this.continue}
+            >
+              Continue
+            </button>
+          </div>
+        </div>
       </div>
     );
   }

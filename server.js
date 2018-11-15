@@ -29,7 +29,7 @@ app.post("/send", (req, res) => {
   }
   const output = `
     <h1>New Adverse Event reported!</h1>
-    <ul style="list-style:none;">
+    <ul style="list-style:none; margin: 0; padding: 0">
         <li>Name: <h3>${req.body.name}</h3></li>
         <li>Lastname: <h3>${req.body.lastname}</h3></li>
         <li>Location: <h3>${req.body.location}</h3></li>

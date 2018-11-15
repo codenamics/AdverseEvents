@@ -12,7 +12,6 @@ export class UserForm extends Component {
     location: "",
     phone: "",
     email: "",
-
     drug: "",
     start_date: "",
     end_date: "",

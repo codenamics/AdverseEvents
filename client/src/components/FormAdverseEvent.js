@@ -17,7 +17,11 @@ export class FormAdverseEvent extends Component {
       <div className="grid grid-form">
         <div class="col col-left flex">
           <div className="container">
-            {" "}
+            <div className="wizard">
+              <div className="a">Personal data</div>
+              <div className="a">Adverse Event Details</div>
+              <div />
+            </div>
             <label htmlFor="drug">Drug</label>
             <div className="input-field">
               <input
@@ -36,7 +40,7 @@ export class FormAdverseEvent extends Component {
                 required
                 id="date-start"
                 type="date"
-                placeholder="Start date"
+                data-placeholder="Start Date"
                 class="validate"
                 onChange={handleChange("start_date")}
                 defaultValue={values.start_date}
@@ -48,7 +52,7 @@ export class FormAdverseEvent extends Component {
                 required
                 id="date-end"
                 type="date"
-                placeholder="End date"
+                data-placeholder="End Date"
                 class="validate"
                 onChange={handleChange("end_date")}
                 defaultValue={values.end_date}
@@ -114,7 +118,7 @@ export class FormAdverseEvent extends Component {
               values.details === "" ||
               values.start_date === "" ||
               values.end_date === "" ? (
-                <button disabled className="ml-20" onClick={this.continue}>
+                <button className="ml-20" onClick={this.continue}>
                   Continue{" "}
                 </button>
               ) : (
