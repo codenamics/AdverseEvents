@@ -12,15 +12,15 @@ export class FormAdverseEvent extends Component {
 
   render() {
     const { values, handleChange } = this.props;
-    console.log(values);
+
     return (
       <div className="grid grid-form">
         <div class="col col-left flex">
           <div className="container">
-            <div class="idea-timeline-numbers">
-              <span class="idea-timeline-value flex complete-step">1.</span>
-              <span class="idea-timeline-value flex complete-step">2.</span>
-              <span class="idea-timeline-value flex">3.</span>
+            <div class="progress-line-numbers">
+              <span class="progress-line-box flex complete-step">1.</span>
+              <span class="progress-line-box flex complete-step">2.</span>
+              <span class="progress-line-box flex">3.</span>
             </div>
             <label htmlFor="drug">Drug</label>
             <div className="input-field">
