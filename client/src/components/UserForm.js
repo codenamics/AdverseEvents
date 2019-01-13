@@ -6,6 +6,7 @@ import Success from "./Success";
 import axios from "axios";
 export class UserForm extends Component {
   state = {
+    errors: {},
     step: 1,
     name: "",
     lastname: "",
@@ -18,7 +19,6 @@ export class UserForm extends Component {
     batch: "",
     outcome: "",
     details: "",
-    errors: {},
 
     success: ""
   };
